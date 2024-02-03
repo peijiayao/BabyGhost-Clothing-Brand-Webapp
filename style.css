@@ -380,7 +380,7 @@ td .btn{
     padding: 20px 0;
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
-   /* overflow: hidden;*/
+    overflow: hidden;
 }
 
 .form-container span{
@@ -394,7 +394,6 @@ td .btn{
 .form-btn{
     display: inline-block;
 }
-
 .form-container form{
     max-width: 300px;
     padding: 0 20px;
