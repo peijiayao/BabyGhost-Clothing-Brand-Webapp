@@ -37,16 +37,16 @@
 
         <div class="row row-2">
             <h2>All Products</h2>
-            <select>
-                <option>Default Sorting</option>
-                <option>Sort by price</option>
-                <option>Sort by popularity</option>
-                <option>Sort by rating</option>
+            <select id="sortOptions" onchange="sortProducts()">
+                <option value="default">Default Sorting</option>
+                <option value="price">Sort by price</option>
+                <option value="popularity">Sort by popularity</option>
+                <option value="rating">Sort by rating</option>
             </select>
         </div>
 
-        <div class="row">
-            <div class="col-3">
+        <div class="row" id="productContainer">
+            <div class="col-3 product" data-price="95.99" data-popularity="1" data-rating="4.5">
                 <a href="product1-detail.html"><img src="images/Popular1.png"></a>
                 <a href="product1-detail.html"><h4>Signature Tracksuit Hot Pink</h4></a>
                 <div class="rating">
@@ -58,7 +58,7 @@
                 </div>
                 <p>$95.99</p>
             </div>
-            <div class="col-3">
+            <div class="col-3 product" data-price="105.99" data-popularity="4" data-rating="5">
                 <a href="product2-detail.html"><img src="images/Popular2.png"></a>
                 <a href="product2-detail.html"><h4>Oil Paint Tracksuit Cream Pie</h4></a>
                 <div class="rating">
@@ -70,7 +70,7 @@
                 </div>
                 <p>$105.99</p>
             </div>
-            <div class="col-3">
+            <div class="col-3 product" data-price="105.99" data-popularity="3" data-rating="5">
                 <a href="product3-detail.html"><img src="images/Popular3.png"></a>
                 <a href="product3-detail.html"><h4>Oil Paint Tracksuit Ice Age</h4></a>
                 <div class="rating">
@@ -82,7 +82,7 @@
                 </div>
                 <p>$105.99</p>
             </div>
-            <div class="col-3">
+            <div class="col-3 product" data-price="105.99" data-popularity="2" data-rating="5">
                 <a href="product4-detail.html"><img src="images/Popular4.png"></a>
                 <a href="product4-detail.html"></a><h4>Wukong Tracksuit Midnight</h4></a>
                 <div class="rating">
@@ -147,5 +147,59 @@
         }
 
     </script>
+
+<!-----js for sorting products----->
+    <script>
+        function sortProducts() {
+            var sortOption = document.getElementById("sortOptions").value;
+            var productContainer = document.getElementById("productContainer");
+            var products = productContainer.getElementsByClassName("product");
+
+            // Convert the HTMLCollection to an array for easier manipulation
+            var productsArray = Array.from(products);
+
+            // Sort products based on the selected option
+            if (sortOption === "price") {
+                productsArray.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+            } else if (sortOption === "popularity") {
+                productsArray.sort((a, b) => parseInt(b.dataset.popularity) - parseInt(a.dataset.popularity));
+            } else if (sortOption === "rating") {
+                productsArray.sort((a, b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+            }
+
+            // Append sorted products back to the container
+            for (var i = 0; i < productsArray.length; i++) {
+                productContainer.appendChild(productsArray[i]);
+            }
+        }
+    </script>
+
+<!-------js for add to cart----->
+
+<script>
+    // Retrieve the current cart count from localStorage when the page loads
+    var cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+
+    // Update the cart count display
+    var cartCountElement = document.querySelector('.nav-cart-count');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+
+    function addToCart(){
+        // Increment cart count
+        cartCount++;
+
+        // Update the cart count display
+        if (cartCountElement) {
+            cartCountElement.textContent = cartCount;
+        }
+
+        // Store the updated cart count in localStorage
+        localStorage.setItem('cartCount', cartCount.toString());
+    }
+</script>
+
+
 </body>
 </html>

@@ -37,7 +37,7 @@ p{
     color: #555;
 }
 .container{
-    max-width: 1300px;
+    max-width: 100%;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
@@ -61,10 +61,36 @@ p{
     line-height: 85%;
     margin: 25px 0;
 }
-.col-4{
-    flex-basis: 50%;
-    min-width: 300px;
-    margin-bottom: 100px;
+
+.about-page{
+    text-align: justify;
+    padding: 50px 0;
+    background: radial-gradient(#fff,#8d989b);
+}
+.about{
+    width: 80%;
+    height: 300px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    font-size: 15px;
+}
+.about-page .col-4{
+    align-items: center;
+    display: flex;
+    margin-bottom: 1000px;
+}
+.about-page .about{
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.6;
+    margin: auto;
+}
+.about-page .about strong.about-heading {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
 }
 .contact{
     width: 300px;
@@ -75,6 +101,8 @@ p{
     margin: auto;
     font-size: 22px;
 }
+
+
 .btn{
     display: inline-block;
     background: #092a86;
@@ -364,6 +392,13 @@ th:last-child{
 td .btn{
     font-size: 17px;
 }
+/* Empty cart message */
+.empty-cart-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
 
 /*----------account-page----------*/
 .account-page{
@@ -462,5 +497,10 @@ form a{
 
     .cart-info p{
         display: none;
+    }
+    .about {
+        width: 100%;
+        font-size: 14px; /* Adjust the font size for smaller screens */
+        /* Add any other necessary adjustments for smaller screens */
     }
 }

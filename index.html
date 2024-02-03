@@ -31,8 +31,8 @@
         </div>
         <div class="row">
             <div class="col-2">
-                <h1>The Only Streetwear<br/>You Need.</h1>
-                <p>With the most trendy and unique styles.</p>
+                <h1>BabyGhost: Where Tiny Creativity Meets<br/> Bold Moves.</h1>
+                <p>Nurturing Young Artistry, Crafted for Dancers, Igniting Streetstyle Fashion.</p>
                 <a href="products.html" class="btn">Explore Now &#8594;</a>
             </div>
             <div class="col-2">
@@ -140,5 +140,33 @@
         }
 
     </script>
+
+<!-------js for add to cart----->
+
+<script>
+    // Retrieve the current cart count from localStorage when the page loads
+    var cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+
+    // Update the cart count display
+    var cartCountElement = document.querySelector('.nav-cart-count');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+
+    function addToCart(){
+        // Increment cart count
+        cartCount++;
+
+        // Update the cart count display
+        if (cartCountElement) {
+            cartCountElement.textContent = cartCount;
+        }
+
+        // Store the updated cart count in localStorage
+        localStorage.setItem('cartCount', cartCount.toString());
+    }
+</script>
+
+
 </body>
 </html>

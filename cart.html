@@ -156,5 +156,32 @@
         }
 
     </script>
+
+<!-------js for add to cart----->
+
+<script>
+    // Retrieve the current cart count from localStorage when the page loads
+    var cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+
+    // Update the cart count display
+    var cartCountElement = document.querySelector('.nav-cart-count');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+
+    function addToCart(){
+        // Increment cart count
+        cartCount++;
+
+        // Update the cart count display
+        if (cartCountElement) {
+            cartCountElement.textContent = cartCount;
+        }
+
+        // Store the updated cart count in localStorage
+        localStorage.setItem('cartCount', cartCount.toString());
+    }
+</script>
+
 </body>
 </html>

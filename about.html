@@ -31,17 +31,27 @@
     </div>
 
 <!----account-page---->
-<div class="account-page">
+<div class="about-page">
     <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <img src="images/Landing1.png" width="100%">
-            </div>
 
             <div class="col-4">
-                <p class="contact">About Us:</p>
+                <p class="about">
+                <strong class="about-heading" style="display: block; text-align: center; margin-bottom: -20px;">About BabyGhost Streetwear:</strong> <br>
+                <br>Welcome to BabyGhost Streetwear, a brand that embodies creativity, inclusivity, and a unique blend of street style fashion. Our journey began with Yaya Yao, the founder and owner, whose inspiration came from a remarkable encounter with a group of special kids during her time as a dance specialist at a summer arts camp. <br>
+
+                <br>In the company of these extraordinary children, each possessing a distinct and unconventional artistry, Yaya found herself drawn to their dark and unique drawing styles. To bridge the gap and connect with them, she started crafting "scary-looking" monsters and ghosts, mirroring the expressive world these kids unveiled through their art. This heartwarming experience laid the foundation for our iconic logo, reflecting the spirit of embracing individuality and celebrating diversity. <br>
+                    
+                <br>At BabyGhost, we take pride in our commitment to supporting kids with different art styles. We believe in empowering them to express themselves freely, fostering an environment where their unique talents are not only acknowledged but celebrated. Our brand encourages young artists to embrace their creativity without fear of judgment or societal stereotypes. <br>
+                    
+                <br>Our dedication extends beyond art. As a passionate dancer herself, Yaya envisioned creating oversized tracksuit sets tailored for hiphop dancers. Our clothing is designed to combine comfort, affordability, and style seamlessly. We understand the importance of feeling at ease while expressing your identity through fashion. <br>
+                    
+                <br>Our mission is clear – to inspire confidence, individuality, and a sense of belonging. BabyGhost Streetwear invites you to join our community, where artistry, dance, and street fashion converge to create a space that is truly unique. Embrace your uniqueness, express yourself boldly, and let your style tell your story. <br>
+                    
+                <br>Thank you for being a part of the BabyGhost journey. <br>
+                    
+                <br>Sincerely, <br>The BabyGhost Streetwear Team </p>
         </div>
-    </div>
+    
 </div>
 
 
@@ -87,6 +97,32 @@
         }
 
     </script>
+
+<!-------js for add to cart----->
+
+<script>
+    // Retrieve the current cart count from localStorage when the page loads
+    var cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+
+    // Update the cart count display
+    var cartCountElement = document.querySelector('.nav-cart-count');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+
+    function addToCart(){
+        // Increment cart count
+        cartCount++;
+
+        // Update the cart count display
+        if (cartCountElement) {
+            cartCountElement.textContent = cartCount;
+        }
+
+        // Store the updated cart count in localStorage
+        localStorage.setItem('cartCount', cartCount.toString());
+    }
+</script>
 
 
 </body>
