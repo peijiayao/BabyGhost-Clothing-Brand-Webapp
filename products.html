@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail - BabyGhost</title>
+    <title>All Products - BabyGhost</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
 
     <div class="container">
         <div class="navbar">
@@ -28,77 +29,38 @@
             <div class="nav-cart-count">0</div>
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
+        
     </div>
 
-<!---Single product details-->
-r
-<div class="small-container single-product">
-    <div class="row">
-        <div class="col-2">
-            <img src="images/Popular4.png" width="100%" id="ProductImg">
-
-             <!--Add when we have more detailed pictures-->
-             <div class="small-img-row">
-                <div class="small-img-col">
-                    <img src="images/Popular4.png" width="100%" class="small-img">
-                </div>
-                <div class="small-img-col">
-                    <img src="images/PlaceHolder.png" width="100%" class="small-img">
-                </div>
-                <div class="small-img-col">
-                    <img src="images/PlaceHolder.png" width="100%" class="small-img">
-                </div>
-                <div class="small-img-col">
-                    <img src="images/PlaceHolder.png" width="100%" class="small-img">
-                </div>
-             </div>
-
-        </div>
-        <div class="col-2">
-            <p>Home / Hoodie</p>
-            <h1>Wukong Tracksuit Set Midnight</h1>
-            <h4>$105.99</h4>
-            <select>
-                <option>Select Size</option>
-                <option>Small</option>
-                <option>Medium</option>
-                <option>L/XL</option>
-            </select>
-            <input type="number" value="1">
-            <a href="" class="btn">Add To Cart</a>
-            <h3>Product Details <i class="fa fa-indent"></i></h3>
-            <p>Give your wardrobe a style upgrade with the BabyGhost Signature Hoodie Hot Pink. Team it with the BabyGhost Signature Sweatpants to be the one who stands out.</p>
-        </div>
-    </div>
-</div>
-
-<!------title------>
+<div class="popular1">
     <div class="small-container">
+
         <div class="row row-2">
-            <h2>Related Products</h2>
-            <p>View More</p>
+            <h2>All Products</h2>
+            <select>
+                <option>Default Sorting</option>
+                <option>Sort by price</option>
+                <option>Sort by popularity</option>
+                <option>Sort by rating</option>
+            </select>
         </div>
-    </div>
-
-<!----products---->
-    <div class="small-container">
 
         <div class="row">
             <div class="col-3">
-                <img src="images/Popular1.png">
-                <h4>Signature Tracksuit Set Hot Pink</h4>
+                <a href="product1-detail.html"><img src="images/Popular1.png"></a>
+                <a href="product1-detail.html"><h4>Signature Tracksuit Hot Pink</h4></a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
                 </div>
                 <p>$95.99</p>
             </div>
             <div class="col-3">
-                <img src="images/Popular2.png">
-                <h4>Oil Paint Tracksuit Set Cream Pie</h4>
+                <a href="product2-detail.html"><img src="images/Popular2.png"></a>
+                <a href="product2-detail.html"><h4>Oil Paint Tracksuit Cream Pie</h4></a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -109,8 +71,20 @@ r
                 <p>$105.99</p>
             </div>
             <div class="col-3">
-                <img src="images/Popular3.png">
-                <h4>Oil Paint Tracksuit Set Ice Age</h4>
+                <a href="product3-detail.html"><img src="images/Popular3.png"></a>
+                <a href="product3-detail.html"><h4>Oil Paint Tracksuit Ice Age</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$105.99</p>
+            </div>
+            <div class="col-3">
+                <a href="product4-detail.html"><img src="images/Popular4.png"></a>
+                <a href="product4-detail.html"></a><h4>Wukong Tracksuit Midnight</h4></a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -120,6 +94,15 @@ r
                 </div>
                 <p>$105.99</p>
         </div>
+    </div>
+    <div class="page-btn">
+        <span>1</span>
+    <!--Add when multuiple paged of product needed-->
+        <!--<span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>-->
+    </div>
 </div>
 
 <!----- footer------>
@@ -164,27 +147,5 @@ r
         }
 
     </script>
-
-<!-------js for product gallery----->
-
-<script>
-    var ProductImg = document.getElementById("ProductImg");
-    var SmallImg = document.getElementsByClassName("small-img");
-        
-            SmallImg[0].onclick = function(){
-                ProductImg.src = SmallImg[0].src;
-            }
-            SmallImg[1].onclick = function(){
-                ProductImg.src = SmallImg[1].src;
-            }
-            SmallImg[2].onclick = function(){
-                ProductImg.src = SmallImg[2].src;
-            }
-            SmallImg[3].onclick = function(){
-                ProductImg.src = SmallImg[3].src;
-        }
-
-</script>
-
 </body>
 </html>
