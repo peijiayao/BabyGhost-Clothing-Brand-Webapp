@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Products - BabyGhost</title>
+    <title>Product Detail - BabyGhost</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
 
     <div class="container">
         <div class="navbar">
@@ -29,27 +28,68 @@
             <div class="nav-cart-count">0</div>
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
-        
     </div>
 
-<div class="popular1">
-    <div class="small-container">
+<!---Single product details-->
+r
+<div class="small-container single-product">
+    <div class="row">
+        <div class="col-2">
+            <img src="images/Popular2s.png" width="100%" id="ProductImg">
 
-        <div class="row row-2">
-            <h2>All Products</h2>
-            <p></p>
-            <select id="sortOptions" onchange="sortProducts()">
-                <option value="default">Default Sorting</option>
-                <option value="price">Sort by price</option>
-                <option value="popularity">Sort by popularity</option>
-                <option value="rating">Sort by rating</option>
-            </select>
+             <!--Add when we have more detailed pictures-->
+             <div class="small-img-row">
+                <div class="small-img-col">
+                    <img src="images/Popular2s.png" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/PlaceHolder.png" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/PlaceHolder.png" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/PlaceHolder.png" width="100%" class="small-img">
+                </div>
+             </div>
+
         </div>
+        <div class="col-2">
+            <p><a href="index.html">Home</a> / <a href="sweatpants.html">Sweatpants</a></p>
+            <h1>Oil Paint Sweatpants Cream Pie</h1>
+            <h4>$53.00</h4>
+            <select>
+                <option>Select Size</option>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>L/XL</option>
+            </select>
+            <input type="number" value="1">
+            <div class="btn">
+                <span onclick="addToCart()">Add To Cart</span>
+            </div>
+            <h3>Product Details <i class="fa fa-indent"></i></h3>
+            <p>Give your wardrobe a style upgrade with the BabyGhost Signature Hoodie Hot Pink. Team it with the BabyGhost Signature Sweatpants to be the one who stands out.</p>
+        </div>
+    </div>
+</div>
 
-        <div class="row" id="productContainer">
-            <div class="col-3 product" data-price="95.99" data-popularity="1" data-rating="4.5">
-                <a href="product1-detail.html"><img src="images/Popular1.png"></a>
-                <a href="product1-detail.html"><h4>Signature Tracksuit Hot Pink</h4></a>
+<!------title------>
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <p>View More</p>
+        </div>
+    </div>
+
+<!----products---->
+
+    <div class="small-container">
+        <div class="row">
+            <!--
+            <div class="col-3">
+                <a href="product2h-detail.html"><img src="images/Popular2h.png"></a>
+                <a href="product2h-detail.html"><h4>Oil Paint Hoodie Cream Pie</h4></a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -57,11 +97,12 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
-                <p>$95.99</p>
+                <p>$55.00</p>
             </div>
-            <div class="col-3 product" data-price="105.99" data-popularity="4" data-rating="5">
+            -->
+            <div class="col-3">
                 <a href="product2-detail.html"><img src="images/Popular2.png"></a>
-                <a href="product2-detail.html"><h4>Oil Paint Tracksuit Cream Pie</h4></a>
+                <a href="product2-detail.html"><h4>Oil Paint Tracksuit Set Cream Pie</h4></a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -71,9 +112,9 @@
                 </div>
                 <p>$105.99</p>
             </div>
-            <div class="col-3 product" data-price="105.99" data-popularity="3" data-rating="5">
+            <div class="col-3">
                 <a href="product3-detail.html"><img src="images/Popular3.png"></a>
-                <a href="product3-detail.html"><h4>Oil Paint Tracksuit Ice Age</h4></a>
+                <a href="product3-detail.html"><h4>Oil Paint Tracksuit Set Ice Age</h4></a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -83,9 +124,9 @@
                 </div>
                 <p>$105.99</p>
             </div>
-            <div class="col-3 product" data-price="105.99" data-popularity="2" data-rating="5">
+            <div class="col-3">
                 <a href="product4-detail.html"><img src="images/Popular4.png"></a>
-                <a href="product4-detail.html"></a><h4>Wukong Tracksuit Midnight</h4></a>
+                <a href="product4-detail.html"><h4>Wukong Tracksuit Set Midnight</h4></a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -95,15 +136,6 @@
                 </div>
                 <p>$105.99</p>
         </div>
-    </div>
-    <div class="page-btn">
-        <span>1</span>
-    <!--Add when multuiple paged of product needed-->
-        <!--<span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>&#8594;</span>-->
-    </div>
 </div>
 
 <!----- footer------>
@@ -149,31 +181,26 @@
 
     </script>
 
-<!-----js for sorting products----->
-    <script>
-        function sortProducts() {
-            var sortOption = document.getElementById("sortOptions").value;
-            var productContainer = document.getElementById("productContainer");
-            var products = productContainer.getElementsByClassName("product");
+<!-------js for product gallery----->
 
-            // Convert the HTMLCollection to an array for easier manipulation
-            var productsArray = Array.from(products);
-
-            // Sort products based on the selected option
-            if (sortOption === "price") {
-                productsArray.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
-            } else if (sortOption === "popularity") {
-                productsArray.sort((a, b) => parseInt(b.dataset.popularity) - parseInt(a.dataset.popularity));
-            } else if (sortOption === "rating") {
-                productsArray.sort((a, b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+<script>
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+        
+            SmallImg[0].onclick = function(){
+                ProductImg.src = SmallImg[0].src;
             }
-
-            // Append sorted products back to the container
-            for (var i = 0; i < productsArray.length; i++) {
-                productContainer.appendChild(productsArray[i]);
+            SmallImg[1].onclick = function(){
+                ProductImg.src = SmallImg[1].src;
             }
+            SmallImg[2].onclick = function(){
+                ProductImg.src = SmallImg[2].src;
+            }
+            SmallImg[3].onclick = function(){
+                ProductImg.src = SmallImg[3].src;
         }
-    </script>
+
+</script>
 
 <!-------js for add to cart----->
 
@@ -200,7 +227,6 @@
         localStorage.setItem('cartCount', cartCount.toString());
     }
 </script>
-
 
 </body>
 </html>
