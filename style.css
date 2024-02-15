@@ -64,7 +64,6 @@ p{
 
 .about-page{
     text-align: justify;
-    padding: 50px 0;
     background: radial-gradient(#fff,#8d989b);
 }
 .about{
@@ -188,6 +187,7 @@ p{
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
+    margin-bottom: 0px;
 }
 
 .footer p{
